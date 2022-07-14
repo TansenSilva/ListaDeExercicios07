@@ -1,24 +1,22 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Chile extends Pais {
 
     private double densidade;
-
-    ArrayList<String> paisesFronteira = new ArrayList<>();
+    List<String> paisesFronteira = new ArrayList<>();
 
     public Chile(String codigoIso, String nome, double populacao, double dimensaoKm2) {
         super(codigoIso, nome, populacao, dimensaoKm2);
-
     }
 
     @Override
     public void adicionarPaisesFronteira() {
-        this.paisesFronteira.add("Argentina");
-        this.paisesFronteira.add("Bolívia");
-        this.paisesFronteira.add("Equador");
+        paisesFronteira.add("Argentina");
+        paisesFronteira.add("Bolívia");
+        paisesFronteira.add("Equador");
 
     }
-
 
     @Override
     public void fazFronteira(String nome) {
@@ -29,12 +27,10 @@ public class Chile extends Pais {
         }
     }
 
-
-
     @Override
     public void mostraPaises() {
         System.out.println("Países que fazem fronteira:");
-        for (String paisesFronteira : this.paisesFronteira) {
+        for (String paisesFronteira : paisesFronteira) {
             System.out.println(paisesFronteira);
         }
     }
@@ -50,9 +46,8 @@ public class Chile extends Pais {
     }
 
     @Override
-    public double calculoDensidade() {
+    public void calculoDensidade() {
         this.setDensidade(this.getPopulacao()/this.getDimensaoKm2());
-        return getDensidade();
     }
 
     public double getDensidade() {
@@ -64,12 +59,12 @@ public class Chile extends Pais {
     }
 
     @Override
-    public ArrayList<String> getPaisesFronteira() {
+    public List<String> getPaisesFronteira() {
         return paisesFronteira;
     }
 
     @Override
-    public void setPaisesFronteira(ArrayList<String> paisesFronteira) {
+    public void setPaisesFronteira(List<String> paisesFronteira) {
         this.paisesFronteira = paisesFronteira;
     }
 }

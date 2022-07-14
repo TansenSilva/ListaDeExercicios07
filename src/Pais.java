@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Pais {
 
@@ -7,7 +8,7 @@ public abstract class Pais {
     private double populacao;
     private double dimensaoKm2;
 
-    ArrayList<String> paisesFronteira = new ArrayList<>();
+    List<String> paisesFronteira = new ArrayList<>();
 
     public Pais(String codigoIso, String nome, double populacao, double dimensaoKm2) {
         this.codigoIso = codigoIso;
@@ -23,7 +24,7 @@ public abstract class Pais {
 
     public abstract void apresentarPais();
 
-    public abstract double calculoDensidade();
+    public abstract void calculoDensidade();
 
     public String getCodigoIso() {
         return codigoIso;
@@ -57,11 +58,11 @@ public abstract class Pais {
         this.dimensaoKm2 = dimensaoKm2;
     }
 
-    public ArrayList<String> getPaisesFronteira() {
+    public List<String> getPaisesFronteira() {
         return paisesFronteira;
     }
 
-    public void setPaisesFronteira(ArrayList<String> paisesFronteira) {
+    public void setPaisesFronteira(List<String> paisesFronteira) {
         this.paisesFronteira = paisesFronteira;
     }
 }

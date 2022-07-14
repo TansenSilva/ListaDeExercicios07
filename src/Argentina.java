@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Argentina extends Pais {
 
     private double densidade;
-    ArrayList<String> paisesFronteira = new ArrayList<>();
+    List<String> paisesFronteira = new ArrayList<>();
 
     public Argentina(String codigoIso, String nome, double populacao, double dimensaoKm2) {
         super(codigoIso, nome, populacao, dimensaoKm2);
@@ -16,6 +18,16 @@ public class Argentina extends Pais {
         paisesFronteira.add("Paraguai");
         paisesFronteira.add("Uruguai");
 
+    }
+
+    public void compararPaises(Pais pais){
+        for(String p : this.paisesFronteira ){
+            for(String p2 : pais.getPaisesFronteira()){
+                if (Objects.equals(p, p2)){
+                    System.out.println(this.getNome()+" e "+pais.getNome()+" tem o(a) "+p2+ " como vizinho comum.");
+                }
+            }
+        }
     }
 
     @Override
@@ -46,9 +58,8 @@ public class Argentina extends Pais {
     }
 
     @Override
-    public double calculoDensidade() {
+    public void calculoDensidade() {
         this.setDensidade(this.getPopulacao()/this.getDimensaoKm2());
-        return getDensidade();
     }
 
     public double getDensidade() {
@@ -60,12 +71,12 @@ public class Argentina extends Pais {
     }
 
     @Override
-    public ArrayList<String> getPaisesFronteira() {
+    public List<String> getPaisesFronteira() {
         return paisesFronteira;
     }
 
     @Override
-    public void setPaisesFronteira(ArrayList<String> paisesFronteira) {
+    public void setPaisesFronteira(List<String> paisesFronteira) {
         this.paisesFronteira = paisesFronteira;
     }
 }

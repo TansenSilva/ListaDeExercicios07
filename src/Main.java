@@ -22,6 +22,7 @@ public class Main {
         argentina.fazFronteira("Bolívia");
         argentina.fazFronteira("China");
         argentina.fazFronteira("Paraguai");
+        argentina.compararPaises(chile);
 
 
     }
